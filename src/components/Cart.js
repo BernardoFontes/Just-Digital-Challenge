@@ -15,11 +15,12 @@ function Cart({ total, quantity, items, increaseButton, decreaseButton }) {
 
   return(
     <div>
-      {quantity}
-      <p>Valor Total: {total.toFixed(2).toString().replace(".", ",")}</p>
-      <button type="button" onClick={() => renderDetails()}>Expandir</button>
+      Produtos: {quantity}
+      <p>Total: {total.toFixed(2).toString().replace(".", ",")}</p>
+      <button type="button" className="iconButton" onClick={() => renderDetails()}>+</button>
+      <aside className="cartDet">
       {details ? <CartDetails items = {items} increaseButton = {increaseButton} decreaseButton = {decreaseButton} /> : ''}
-      
+      </aside>
     </div>
   )
 }

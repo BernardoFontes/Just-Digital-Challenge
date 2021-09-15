@@ -54,20 +54,20 @@ function Products(){
   },[])
 
   return(
-    <div>
+    <div className="divInit">
       {console.log(data)}
       {data.map((products) => (
-         <div>
+         <div className = "productDiv">
          <Link to={`/ProductDetails/${products.id}`}>
+         <h6 className="productTitle">{products.title}</h6>
          <img src={products.picture} />
-         <p>{products.title}</p>
-         <p>{`R$ ${products.price.toString().replace(".", ",")}`}</p>
+         <p className="productPrice">{`R$ ${products.price.toString().replace(".", ",")}`}</p>
          </Link>
-         <button type="button" onClick={() => increaseButton(products.price, products)}>Comprar</button>
+         <button type="button" className="buyButton" onClick={() => increaseButton(products.price, products)}>Comprar</button>
        </div>
         ))
       }
-      <div>
+      <div className="divCarrinho">
       <Cart total={total} quantity={quantity} items={items} increaseButton={increaseButton} decreaseButton={decreaseButton} />
       </div>
     </div>
